@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-driving car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="carCanvas"></canvas>
+    <div id="interface">
+        <h1>welcome to train your car</h1>
+        <p>number of AI cars</p>
+        <input type="number" placeholder="50" id="numberOfCars" max="100" min="1"></button>
+        <p>number cars in traffic</p>
+        <input type="number"></button>
+        <p>number of sensors</p>
+        <input type="number" id="numberOfSensors"></button>
+        <p>sensor range</p>
+        <input type="range" max="360" min="0"></button>
+        <p>Mutation range</p>
+        <input type="range" max="100" min="0"></button>
+
+        <button onclick="startMoving()">Start</button>
+        <button onclick="stopMoving()">Stop</button>
+        <button onclick="saveBrain()">💾Save your AI💾</button>
+        <button onclick="discardBrain()">🗑️Delete your AI🗑️</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
+
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
+    <script src="utils.js"></script>
+    <script src="sensors.js"></script>
+    <script src="road.js"></script>
+    <script src="controls.js"></script>
+    <script src="car.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
