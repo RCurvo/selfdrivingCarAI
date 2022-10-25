@@ -12,7 +12,7 @@ networkCanvas.height = window.innerHeight;
 road.draw(carCtx);
 
 const maxCars = 1000;
-const mutateAmount = 0.1
+const mutateAmount = 0.3
 
 let cars = [];
 
