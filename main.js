@@ -12,7 +12,8 @@ networkCanvas.height = window.innerHeight;
 road.draw(carCtx);
 
 const maxCars = 1000;
-const mutateAmount = 0.3
+const mutateAmount = 0.2
+let mutateAmountAdder = 0;
 
 let cars = [];
 
@@ -55,6 +56,7 @@ function generateCars(N) {
 function animateAll() {
     let animateXCars = document.getElementById("numberOfCars").value;
     let animateXSensors = document.getElementById("numberOfSensors").value;
+
     if (animateXCars != "") {
         cars.splice(parseInt(animateXCars));
     }
@@ -109,6 +111,7 @@ function animateAll() {
 function startMoving() {
 
     cars = generateCars(maxCars);
+    mutateAmountAdder = document.getElementById("mutationRange").value / 66.66;
 
     let bestCar = cars[0];
     if (localStorage.getItem("bestBrain")) {
@@ -116,7 +119,8 @@ function startMoving() {
             cars[i].brain = JSON.parse(
                 localStorage.getItem("bestBrain"));
             if (i != 0) {
-                NeuralNetwork.mutate(cars[i].brain, mutateAmount);
+                console.log(mutateAmount + mutateAmountAdder)
+                NeuralNetwork.mutate(cars[i].brain, mutateAmount + mutateAmountAdder);
             }
         }
     }
