@@ -109,7 +109,6 @@ function animateAll() {
 }
 
 function startMoving() {
-
     cars = generateCars(maxCars);
     mutateAmountAdder = document.getElementById("mutationRange").value / 66.66;
 
@@ -119,7 +118,6 @@ function startMoving() {
             cars[i].brain = JSON.parse(
                 localStorage.getItem("bestBrain"));
             if (i != 0) {
-                console.log(mutateAmount + mutateAmountAdder)
                 NeuralNetwork.mutate(cars[i].brain, mutateAmount + mutateAmountAdder);
             }
         }
